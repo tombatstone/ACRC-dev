@@ -104,4 +104,4 @@ Update quotas using `mmsetquota -F`
 ```
 mmsetquota -F /tmp/quota_stanza
 ```
-Optional - uncomment the final line of the script to automatically run `mmsetquota` and update from the new stanza file.
+Optional - uncomment the final 2 lines of the script to automatically run `mmsetquota` and update from the new stanza file.
