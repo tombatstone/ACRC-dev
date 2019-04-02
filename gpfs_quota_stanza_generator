@@ -1,0 +1,9 @@
+#!/bin/bash
+
+quotas=$(sqlite3 quota.db "SELECT * FROM gpfs_quotas")
+
+for line in $quotas
+  do
+#  echo $line
+  echo $line | awk -F '|' '{ print "%quota:\n","\tdevice="$1"\n","\tcommand="$2"\n","\tfileset="$3"\n","\ttype="$4"\n","\tid="$5"\n","\tblockQuota="$6"\n","\tblockLimit="$7"\n","\tfilesQuota="$8"\n","\tfilesLimit="$9"\n" }' >> /tmp/quota_stanza
+done
